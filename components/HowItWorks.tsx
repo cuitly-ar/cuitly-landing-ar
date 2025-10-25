@@ -20,17 +20,17 @@ const HowItWorks = () => {
     {
       number: '1',
       title: 'Hablá con Cuitly por WhatsApp',
-      description: 'Enviá los datos de tu venta o nota de crédito por chat.',
+      description: 'Enviá los datos de tu venta o nota de crédito por chat, texto o voz.',
     },
     {
       number: '2',
       title: 'Cuitly genera tu factura oficial',
-      description: 'El sistema se conecta con ARCA (ex AFIP) y crea el comprobante por vos.',
+      description: 'El sistema se conecta automáticamente con ARCA (ex AFIP) y crea el comprobante al instante.',
     },
     {
       number: '3',
-      title: 'Recibí la factura en segundos',
-      description: 'Te llega al chat lista para reenviar a tu cliente o descargarla.',
+      title: 'Recibí tu factura en segundos',
+      description: 'Te llega por WhatsApp lista para reenviar, descargar o archivar.',
     },
   ]
 

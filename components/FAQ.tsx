@@ -43,6 +43,14 @@ const FAQ = () => {
       question: '¿Es seguro dar mis credenciales?',
       answer: 'Sí, completamente. Solo necesitás ingresar tus credenciales de ARCA una única vez para autorizar el servicio. Cuitly no almacena tu clave fiscal y podés cambiarla cuando quieras sin afectar la delegación.',
     },
+    {
+      question: '¿Puedo usar Cuitly si soy Responsable Inscripto?',
+      answer: 'Por ahora, solo para monotributistas. La versión para Responsables Inscriptos estará disponible pronto.',
+    },
+    {
+      question: '¿Puedo emitir facturas desde varios dispositivos?',
+      answer: 'Sí, con el Plan Profesional podés hacerlo desde WhatsApp o desde la web.',
+    },
   ]
 
   // Ventajas adicionales

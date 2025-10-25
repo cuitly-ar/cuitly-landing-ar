@@ -6,9 +6,9 @@
 
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useInView } from '@/hooks/useInView'
-import { FaCheck, FaTimes } from 'react-icons/fa'
+import { FaCheck, FaTimes, FaChevronDown, FaChevronUp } from 'react-icons/fa'
 import { useState } from 'react'
 
 const Pricing = () => {
@@ -18,6 +18,7 @@ const Pricing = () => {
   })
 
   const [isAnnual, setIsAnnual] = useState(true) // Anual por defecto
+  const [showComparison, setShowComparison] = useState(false) // Tabla de comparación oculta por defecto
 
   // Planes de precios
   const plans = [
@@ -260,59 +261,90 @@ const Pricing = () => {
           ))}
         </div>
 
-        {/* Tabla de comparación */}
+        {/* Botón para mostrar/ocultar tabla de comparación */}
         <motion.div
-          className="max-w-7xl mx-auto mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
+          className="text-center mb-8"
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <h3 className="text-2xl lg:text-3xl font-bold text-primary-blue mb-8 text-center">
-            Comparación detallada de planes
-          </h3>
-          
-          {/* Tabla responsive */}
-          <div className="overflow-x-auto">
-            <table className="w-full bg-white rounded-2xl shadow-lg overflow-hidden">
-              <thead className="bg-gradient-to-r from-primary-blue to-primary-dark-blue text-white">
-                <tr>
-                  <th className="px-6 py-4 text-left font-semibold">Funcionalidad</th>
-                  <th className="px-6 py-4 text-center font-semibold">Esencial</th>
-                  <th className="px-6 py-4 text-center font-semibold">Profesional</th>
-                  <th className="px-6 py-4 text-center font-semibold">Business</th>
-                </tr>
-              </thead>
-              <tbody>
-                {comparisonData.map((row, index) => (
-                  <tr key={index} className={`border-b border-gray-200 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'} hover:bg-blue-50 transition-colors duration-200`}>
-                    <td className="px-6 py-4 text-gray-800 font-medium">{row.feature}</td>
-                    <td className="px-6 py-4 text-center">
-                      {row.esencial ? (
-                        <FaCheck className="text-accent-green text-xl mx-auto" />
-                      ) : (
-                        <FaTimes className="text-gray-400 text-xl mx-auto" />
-                      )}
-                    </td>
-                    <td className="px-6 py-4 text-center">
-                      {row.profesional ? (
-                        <FaCheck className="text-accent-green text-xl mx-auto" />
-                      ) : (
-                        <FaTimes className="text-gray-400 text-xl mx-auto" />
-                      )}
-                    </td>
-                    <td className="px-6 py-4 text-center">
-                      {row.business ? (
-                        <FaCheck className="text-purple-600 text-xl mx-auto" />
-                      ) : (
-                        <FaTimes className="text-gray-400 text-xl mx-auto" />
-                      )}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <button
+            onClick={() => setShowComparison(!showComparison)}
+            className="inline-flex items-center gap-3 px-8 py-4 bg-white border-2 border-primary-blue text-primary-blue font-semibold rounded-xl hover:bg-primary-blue hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            <span>{showComparison ? 'Ocultar' : 'Ver'} comparación detallada</span>
+            {showComparison ? (
+              <FaChevronUp className="text-xl" />
+            ) : (
+              <FaChevronDown className="text-xl" />
+            )}
+          </button>
         </motion.div>
+
+        {/* Tabla de comparación con animación */}
+        <AnimatePresence>
+          {showComparison && (
+            <motion.div
+              className="max-w-7xl mx-auto mb-16 overflow-hidden"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.5, ease: 'easeInOut' }}
+            >
+              <motion.div
+                initial={{ y: -20 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                <h3 className="text-2xl lg:text-3xl font-bold text-primary-blue mb-8 text-center">
+                  Comparación detallada de planes
+                </h3>
+                
+                {/* Tabla responsive */}
+                <div className="overflow-x-auto">
+                  <table className="w-full bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <thead className="bg-gradient-to-r from-primary-blue to-primary-dark-blue text-white">
+                      <tr>
+                        <th className="px-6 py-4 text-left font-semibold">Funcionalidad</th>
+                        <th className="px-6 py-4 text-center font-semibold">Esencial</th>
+                        <th className="px-6 py-4 text-center font-semibold">Profesional</th>
+                        <th className="px-6 py-4 text-center font-semibold">Business</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {comparisonData.map((row, index) => (
+                        <tr key={index} className={`border-b border-gray-200 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'} hover:bg-blue-50 transition-colors duration-200`}>
+                          <td className="px-6 py-4 text-gray-800 font-medium">{row.feature}</td>
+                          <td className="px-6 py-4 text-center">
+                            {row.esencial ? (
+                              <FaCheck className="text-accent-green text-xl mx-auto" />
+                            ) : (
+                              <FaTimes className="text-gray-400 text-xl mx-auto" />
+                            )}
+                          </td>
+                          <td className="px-6 py-4 text-center">
+                            {row.profesional ? (
+                              <FaCheck className="text-accent-green text-xl mx-auto" />
+                            ) : (
+                              <FaTimes className="text-gray-400 text-xl mx-auto" />
+                            )}
+                          </td>
+                          <td className="px-6 py-4 text-center">
+                            {row.business ? (
+                              <FaCheck className="text-purple-600 text-xl mx-auto" />
+                            ) : (
+                              <FaTimes className="text-gray-400 text-xl mx-auto" />
+                            )}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Información adicional */}
         <motion.div

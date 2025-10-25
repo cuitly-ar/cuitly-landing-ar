@@ -7,9 +7,11 @@
 
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
+import WhyChoose from '@/components/WhyChoose'
 import HowItWorks from '@/components/HowItWorks'
 import Features from '@/components/Features'
 import Benefits from '@/components/Benefits'
+import WhatMakesDifferent from '@/components/WhatMakesDifferent'
 import Pricing from '@/components/Pricing'
 import FAQ from '@/components/FAQ'
 import CTA from '@/components/CTA'
@@ -24,6 +26,9 @@ export default function Home() {
       {/* Sección Hero principal */}
       <Hero />
       
+      {/* Por qué elegir Cuitly */}
+      <WhyChoose />
+      
       {/* Sección Cómo funciona */}
       <HowItWorks />
       
@@ -32,6 +37,9 @@ export default function Home() {
       
       {/* Sección de beneficios */}
       <Benefits />
+      
+      {/* Lo que hace diferente a Cuitly */}
+      <WhatMakesDifferent />
       
       {/* Sección de planes y precios */}
       <Pricing />

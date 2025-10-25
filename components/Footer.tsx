@@ -142,22 +142,35 @@ const Footer = () => {
 
         {/* Copyright y enlaces legales */}
         <motion.div
-          className="border-t border-gray-300 pt-8 flex flex-col md:flex-row items-center justify-between gap-4"
+          className="border-t border-gray-300 pt-8 flex flex-col gap-6"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <p className="text-secondary-text text-sm text-center md:text-left">
-            &copy; {currentYear} Cuitly. Todos los derechos reservados.
-          </p>
-          <div className="flex flex-wrap gap-6 text-sm">
-            <Link href="/terminos" className="text-secondary-text hover:text-primary-blue transition-colors duration-300">
-              Términos de Servicio
-            </Link>
-            <a href="/privacidad" className="text-secondary-text hover:text-primary-blue transition-colors duration-300">
-              Política de Privacidad
-            </a>
+          {/* Texto institucional */}
+          <div className="text-center">
+            <p className="text-sm text-secondary-text max-w-4xl mx-auto leading-relaxed mb-4">
+              <strong>Cuitly</strong> es una plataforma independiente y no está afiliada ni representa oficialmente a <strong>ARCA (ex AFIP)</strong>. Todos los comprobantes son emitidos y válidos bajo normativa vigente.
+            </p>
+            <p className="text-xs text-secondary-text max-w-3xl mx-auto leading-relaxed">
+              <strong>Sin descargas, sin instalaciones.</strong> Cuitly funciona 100% online con infraestructura en Google Cloud, la nube más confiable del mundo.
+            </p>
+          </div>
+
+          {/* Copyright y enlaces */}
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-4 border-t border-gray-200">
+            <p className="text-secondary-text text-sm text-center md:text-left">
+              &copy; {currentYear} Cuitly. Todos los derechos reservados.
+            </p>
+            <div className="flex flex-wrap gap-6 text-sm">
+              <Link href="/terminos" className="text-secondary-text hover:text-primary-blue transition-colors duration-300">
+                Términos de Servicio
+              </Link>
+              <a href="/privacidad" className="text-secondary-text hover:text-primary-blue transition-colors duration-300">
+                Política de Privacidad
+              </a>
+            </div>
           </div>
         </motion.div>
       </div>

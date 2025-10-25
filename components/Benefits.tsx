@@ -21,25 +21,25 @@ const Benefits = () => {
     {
       icon: FaClock,
       title: 'Ahorro de tiempo real',
-      description: 'Reducí hasta un 90% el tiempo que dedicás a facturar cada semana.',
+      description: 'Reducís hasta un 90% el tiempo que dedicás a facturar.',
       color: 'from-purple-400 to-pink-500',
     },
     {
       icon: FaExclamationTriangle,
-      title: 'Evita errores manuales',
-      description: 'El sistema valida los datos antes de generar la factura.',
+      title: 'Cero errores manuales',
+      description: 'Cuitly valida tus datos antes de generar la factura.',
       color: 'from-orange-400 to-red-500',
     },
     {
       icon: FaMobileAlt,
       title: 'Todo desde tu celular',
-      description: 'Sin ingresar portales, sin recordatorios, sin burocracia.',
+      description: 'Sin portales, sin recordatorios, sin burocracia.',
       color: 'from-cyan-400 to-blue-500',
     },
     {
       icon: FaLock,
-      title: 'Transparencia y seguridad total',
-      description: 'Tus datos se usan solo para emitir comprobantes oficiales, sin almacenar tu clave fiscal.',
+      title: 'Seguridad total',
+      description: 'Tus datos se usan solo para emitir comprobantes oficiales.',
       color: 'from-green-400 to-teal-500',
     },
   ]

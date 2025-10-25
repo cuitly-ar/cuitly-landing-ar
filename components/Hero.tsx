@@ -42,22 +42,25 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <span className="text-primary-blue">Tu facturación,</span>
-              <br />
-              <span className="text-gradient bg-gradient-to-r from-primary-blue to-accent-green bg-clip-text text-transparent">
-              más simple
-              </span>
-              <br />
-              <span className="text-primary-blue">que nunca</span>
+              <span className="text-primary-blue">Facturá desde WhatsApp</span>
             </motion.h1>
 
             <motion.p
-              className="text-lg sm:text-xl text-secondary-text mb-8 leading-relaxed"
+              className="text-lg sm:text-xl text-secondary-text mb-4 leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              La app de facturación más simple para monotributistas. Emití facturas electrónicas oficiales en ARCA desde WhatsApp en segundos. Sin entrar al portal, sin errores.
+              <strong className="text-gray-900">La forma más rápida y segura de emitir tus facturas AFIP/ARCA</strong>
+            </motion.p>
+
+            <motion.p
+              className="text-base sm:text-lg text-secondary-text mb-8 leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+            >
+              Sin errores, sin complicaciones, sin entrar al portal.
             </motion.p>
 
             <motion.div
