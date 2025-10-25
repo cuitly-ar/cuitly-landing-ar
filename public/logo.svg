@@ -1,0 +1,36 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo con gradiente -->
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2196F3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1976D2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Fondo redondeado -->
+  <rect width="200" height="200" rx="40" fill="url(#logoGradient)"/>
+  
+  <!-- Icono de factura simplificado -->
+  <g transform="translate(50, 40)">
+    <!-- Documento/factura -->
+    <rect x="10" y="10" width="80" height="120" rx="8" fill="white" opacity="0.95"/>
+    
+    <!-- Líneas de texto en la factura -->
+    <line x1="20" y1="30" x2="60" y2="30" stroke="#2196F3" stroke-width="4" stroke-linecap="round"/>
+    <line x1="20" y1="45" x2="80" y2="45" stroke="#2196F3" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+    <line x1="20" y1="60" x2="70" y2="60" stroke="#2196F3" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+    
+    <!-- Símbolo de dólar/precio -->
+    <circle cx="50" cy="95" r="18" fill="#00C853"/>
+    <text x="50" y="105" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">$</text>
+  </g>
+  
+  <!-- Marca de verificación (opcional, para representar automatización) -->
+  <circle cx="160" cy="50" r="20" fill="#00C853"/>
+  <path d="M152 50 L158 56 L168 44" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>
+
+
+
+
+
