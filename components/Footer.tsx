@@ -8,11 +8,35 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import Image from 'next/image'
 import { FaFileInvoiceDollar, FaWhatsapp, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
+import { useState } from 'react'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
+  const [showArrepentimientoModal, setShowArrepentimientoModal] = useState(false)
+  const [arrepentimientoForm, setArrepentimientoForm] = useState({
+    nombre: '',
+    apellidos: '',
+    correo: '',
+    cuit: '',
+    movil: '',
+    motivo: ''
+  })
+
+  const handleArrepentimientoSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    // Por ahora solo alerta
+    alert('Formulario de arrepentimiento enviado. En producción se enviará a legales@cuitly.ar')
+    setShowArrepentimientoModal(false)
+    setArrepentimientoForm({
+      nombre: '',
+      apellidos: '',
+      correo: '',
+      cuit: '',
+      movil: '',
+      motivo: ''
+    })
+  }
 
   // Secciones del footer
   const footerSections = [
@@ -42,8 +66,8 @@ const Footer = () => {
         { name: 'Centro de Ayuda', href: '#' },
         { name: 'Facturación AFIP', href: '#' },
         { name: 'Normativas', href: '#' },
-        { name: 'RG 5007/2023', href: '#' },
         { name: 'Documentación', href: '#' },
+        { name: 'Botón de Arrepentimiento', href: '#arrepentimiento', onClick: true },
       ],
     },
   ]
@@ -77,40 +101,6 @@ const Footer = () => {
               <p className="text-secondary-text mb-6 leading-relaxed">
                 La forma más simple de facturar en Argentina. Automatizá tu facturación desde WhatsApp.
               </p>
-              
-              {/* Logos de partners */}
-              <div className="mb-6">
-                <p className="text-xs text-secondary-text mb-3 font-semibold">Integrado con:</p>
-                <div className="flex items-center gap-4 flex-wrap">
-                  <div className="grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100">
-                    <Image 
-                      src="/partners/arca.png" 
-                      alt="ARCA" 
-                      width={60} 
-                      height={30}
-                      className="object-contain"
-                    />
-                  </div>
-                  <div className="grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100">
-                    <Image 
-                      src="/partners/Google_Cloud_Platform.png" 
-                      alt="Google Cloud Platform" 
-                      width={70} 
-                      height={30}
-                      className="object-contain"
-                    />
-                  </div>
-                  <div className="grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100">
-                    <Image 
-                      src="/partners/dlocalgo.webp" 
-                      alt="dLocal GO" 
-                      width={60} 
-                      height={30}
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
-              </div>
               
               {/* Redes sociales */}
               <div className="flex gap-3">
@@ -149,7 +139,16 @@ const Footer = () => {
               <ul className="space-y-3">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
-                    {link.href.startsWith('/') ? (
+                    {link.onClick ? (
+                      <button
+                        onClick={() => setShowArrepentimientoModal(true)}
+                        className="text-secondary-text hover:text-primary-blue transition-colors duration-300 flex items-center gap-2 group"
+                      >
+                        <span className="group-hover:translate-x-1 transition-transform duration-300">
+                          {link.name}
+                        </span>
+                      </button>
+                    ) : link.href.startsWith('/') ? (
                       <Link
                         href={link.href}
                         className="text-secondary-text hover:text-primary-blue transition-colors duration-300 flex items-center gap-2 group"
@@ -209,6 +208,130 @@ const Footer = () => {
           </div>
         </motion.div>
       </div>
+
+      {/* Modal Botón de Arrepentimiento */}
+      {showArrepentimientoModal && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative max-h-[90vh] overflow-y-auto"
+          >
+            <button
+              onClick={() => setShowArrepentimientoModal(false)}
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl"
+            >
+              &times;
+            </button>
+
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Botón de Arrepentimiento</h2>
+            <p className="text-sm text-gray-700 mb-6 leading-relaxed">
+              Ud, tiene derecho a revocar la aceptación dentro del plazo de <strong>10 días corridos</strong> contados a partir de la fecha en que se entregue el bien o se celebre el contrato, lo último que ocurra, sin responsabilidad alguna, conforme <strong>Art. 34 de la Ley 24.240</strong>.
+            </p>
+
+            <form onSubmit={handleArrepentimientoSubmit} className="space-y-4">
+              <div>
+                <label htmlFor="nombre" className="block text-sm font-medium text-gray-700 mb-1">
+                  Nombre*
+                </label>
+                <input
+                  type="text"
+                  id="nombre"
+                  required
+                  value={arrepentimientoForm.nombre}
+                  onChange={(e) => setArrepentimientoForm({...arrepentimientoForm, nombre: e.target.value})}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-transparent outline-none"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="apellidos" className="block text-sm font-medium text-gray-700 mb-1">
+                  Apellidos*
+                </label>
+                <input
+                  type="text"
+                  id="apellidos"
+                  required
+                  value={arrepentimientoForm.apellidos}
+                  onChange={(e) => setArrepentimientoForm({...arrepentimientoForm, apellidos: e.target.value})}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-transparent outline-none"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="correo" className="block text-sm font-medium text-gray-700 mb-1">
+                  Correo*
+                </label>
+                <input
+                  type="email"
+                  id="correo"
+                  required
+                  value={arrepentimientoForm.correo}
+                  onChange={(e) => setArrepentimientoForm({...arrepentimientoForm, correo: e.target.value})}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-transparent outline-none"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="cuit" className="block text-sm font-medium text-gray-700 mb-1">
+                  CUIT*
+                </label>
+                <input
+                  type="text"
+                  id="cuit"
+                  required
+                  value={arrepentimientoForm.cuit}
+                  onChange={(e) => setArrepentimientoForm({...arrepentimientoForm, cuit: e.target.value})}
+                  placeholder="20-12345678-9"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-transparent outline-none"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="movil" className="block text-sm font-medium text-gray-700 mb-1">
+                  Número de Móvil*
+                </label>
+                <div className="flex gap-2">
+                  <div className="flex items-center gap-2 px-3 py-2 border border-gray-300 rounded-lg bg-gray-50">
+                    <span>🇦🇷</span>
+                    <span className="text-sm text-gray-600">+54</span>
+                  </div>
+                  <input
+                    type="tel"
+                    id="movil"
+                    required
+                    value={arrepentimientoForm.movil}
+                    onChange={(e) => setArrepentimientoForm({...arrepentimientoForm, movil: e.target.value})}
+                    placeholder="11 1234 5678"
+                    className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-transparent outline-none"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="motivo" className="block text-sm font-medium text-gray-700 mb-1">
+                  Motivo*
+                </label>
+                <textarea
+                  id="motivo"
+                  required
+                  rows={3}
+                  value={arrepentimientoForm.motivo}
+                  onChange={(e) => setArrepentimientoForm({...arrepentimientoForm, motivo: e.target.value})}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-transparent outline-none resize-none"
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full px-6 py-3 bg-primary-blue text-white font-bold rounded-lg hover:bg-primary-dark-blue transition-all duration-300 shadow-md hover:shadow-lg"
+              >
+                Enviar
+              </button>
+            </form>
+          </motion.div>
+        </div>
+      )}
     </footer>
   )
 }

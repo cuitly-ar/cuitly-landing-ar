@@ -173,6 +173,4 @@ El proyecto está configurado para deploy automático en Netlify:
 
 ---
 
-**¡Tu landing está lista para producción! 🎉**
-
 Desarrollado para Cuitly - Todos los derechos reservados © 2025

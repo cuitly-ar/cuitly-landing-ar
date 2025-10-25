@@ -45,11 +45,13 @@ const WhatMakesDifferent = () => {
           </h2>
 
           {/* Lista de características */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10 max-w-4xl mx-auto">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
-                className="flex items-center gap-3 text-left bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 hover:bg-white/20 transition-all duration-300"
+                className={`flex items-center gap-3 text-left bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 hover:bg-white/20 transition-all duration-300 ${
+                  index === features.length - 1 ? 'md:col-span-2 md:max-w-md md:mx-auto' : ''
+                }`}
                 initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -67,7 +69,7 @@ const WhatMakesDifferent = () => {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            "Más que una app, un asistente que trabaja por vos."
+            Más que una app, un asistente que trabaja por vos.
           </motion.p>
         </motion.div>
       </div>

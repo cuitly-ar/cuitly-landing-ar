@@ -111,7 +111,7 @@ const Hero = () => {
               {/* Mockup del chat de WhatsApp */}
               <div className="relative w-80 sm:w-96 bg-white rounded-3xl shadow-2xl overflow-hidden animate-float">
                 {/* Header de WhatsApp */}
-                <div className="bg-accent-green text-white px-6 py-4 flex items-center gap-3">
+                <div className="bg-gradient-to-r from-primary-blue to-primary-dark-blue text-white px-6 py-4 flex items-center gap-3">
                   <FaWhatsapp className="text-3xl" />
                   <div className="flex-1">
                     <div className="flex items-center gap-2">
@@ -119,7 +119,7 @@ const Hero = () => {
                       {/* Tilde de verificado */}
                       <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
                         <circle cx="12" cy="12" r="10" fill="white"/>
-                        <path d="M9 12l2 2 4-4" stroke="#00C853" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M9 12l2 2 4-4" stroke="#2196F3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
                     </div>
                     <p className="text-xs opacity-90">en línea</p>
@@ -139,7 +139,7 @@ const Hero = () => {
                       <div
                         className={`max-w-xs px-4 py-3 rounded-2xl shadow-md ${
                           message.type === 'sent'
-                            ? 'bg-accent-green text-white rounded-br-sm'
+                            ? 'bg-primary-blue text-white rounded-br-sm'
                             : 'bg-white text-gray-800 rounded-bl-sm'
                         }`}
                       >
