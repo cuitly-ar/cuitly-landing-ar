@@ -1,9 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  output: 'export',
   // Optimización de imágenes
   images: {
-    domains: [],
+    unoptimized: true,
   },
 }
 
