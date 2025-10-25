@@ -17,7 +17,7 @@ const Pricing = () => {
     threshold: 0.1,
   })
 
-  const [isAnnual, setIsAnnual] = useState(false)
+  const [isAnnual, setIsAnnual] = useState(true) // Anual por defecto
 
   // Planes de precios
   const plans = [
@@ -25,6 +25,7 @@ const Pricing = () => {
       name: 'Plan Esencial',
       monthlyPrice: '6.999',
       yearlyPrice: '5.499',
+      yearlyTotal: '65.988',
       description: 'Perfecto para emprendedores y freelancers',
       features: [
         'Facturación por WhatsApp',
@@ -41,6 +42,7 @@ const Pricing = () => {
       name: 'Plan Profesional',
       monthlyPrice: '13.999',
       yearlyPrice: '10.999',
+      yearlyTotal: '131.988',
       description: 'Ideal para negocios en crecimiento',
       features: [
         'Todo lo del Plan Esencial, más:',
@@ -138,23 +140,32 @@ const Pricing = () => {
                   </span>
                 </div>
                 
-                {/* Mensaje según el tipo de plan */}
-                {isAnnual && (
-                  <div className={`inline-block px-4 py-2 rounded-full text-sm font-semibold ${
-                    plan.highlighted 
-                      ? 'bg-accent-green text-white' 
-                      : 'bg-accent-green/10 text-accent-green'
-                  }`}>
-                    Ahorro anual: ${(parseFloat(plan.monthlyPrice.replace('.', '')) * 12 - parseFloat(plan.yearlyPrice.replace('.', '')) * 12).toLocaleString('es-AR')}
+                {/* Información del tipo de pago */}
+                {isAnnual ? (
+                  <div className={`space-y-2`}>
+                    <div className={`inline-block px-4 py-2 rounded-full text-sm font-semibold ${
+                      plan.highlighted 
+                        ? 'bg-accent-green text-white' 
+                        : 'bg-accent-green/10 text-accent-green'
+                    }`}>
+                      Pago anual: ${plan.yearlyTotal}
+                    </div>
+                    <p className={`text-xs ${plan.highlighted ? 'text-white/70' : 'text-secondary-text'}`}>
+                      Se cobra 1 vez al año
+                    </p>
                   </div>
-                )}
-                {!isAnnual && (
-                  <div className={`inline-block px-4 py-2 rounded-full text-sm font-semibold ${
-                    plan.highlighted 
-                      ? 'bg-white/20 text-white' 
-                      : 'bg-primary-blue/10 text-primary-blue'
-                  }`}>
-                    Facturación mensual
+                ) : (
+                  <div className={`space-y-2`}>
+                    <div className={`inline-block px-4 py-2 rounded-full text-sm font-semibold ${
+                      plan.highlighted 
+                        ? 'bg-white/20 text-white' 
+                        : 'bg-primary-blue/10 text-primary-blue'
+                    }`}>
+                      Pago mensual
+                    </div>
+                    <p className={`text-xs ${plan.highlighted ? 'text-white/70' : 'text-secondary-text'}`}>
+                      Se cobra todos los meses
+                    </p>
                   </div>
                 )}
               </div>

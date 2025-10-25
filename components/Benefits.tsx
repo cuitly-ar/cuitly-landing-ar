@@ -136,7 +136,7 @@ const Benefits = () => {
             href="#pricing"
             className="inline-block px-8 py-4 bg-gradient-to-r from-accent-green to-accent-green-hover text-white font-semibold rounded-xl shadow-lg hover:shadow-glow-green transition-all duration-300 hover:scale-105"
           >
-            Probá gratis por 30 días
+            Probá gratis por 7 días
           </a>
         </motion.div>
       </div>

@@ -42,13 +42,13 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <span className="text-primary-blue">Facturá en ARCA</span>
+              <span className="text-primary-blue">Facturá desde WhatsApp</span>
               <br />
               <span className="text-gradient bg-gradient-to-r from-primary-blue to-accent-green bg-clip-text text-transparent">
-                desde WhatsApp
+                App de Facturación AFIP
               </span>
               <br />
-              <span className="text-primary-blue">con Cuitly</span>
+              <span className="text-primary-blue">para Monotributo</span>
             </motion.h1>
 
             <motion.p
@@ -57,7 +57,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Automatizá tu facturación y olvidate del portal de ARCA. Con Cuitly, emití tus comprobantes oficiales desde WhatsApp en segundos, sin complicaciones ni errores.
+              Automatizá tu facturación en ARCA (ex AFIP) desde WhatsApp. Emití facturas electrónicas oficiales para monotributo en segundos, sin entrar al portal. Sin complicaciones, sin errores.
             </motion.p>
 
             <motion.div
@@ -70,7 +70,7 @@ const Hero = () => {
                 href="#pricing"
                 className="group relative px-8 py-4 bg-gradient-to-r from-accent-green to-accent-green-hover text-white font-bold rounded-xl shadow-xl hover:shadow-glow-green transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 overflow-hidden"
               >
-                <span className="relative z-10">Empezá gratis por 7 días</span>
+                <span className="relative z-10">Facturar ahora - 7 días gratis</span>
                 <svg className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>

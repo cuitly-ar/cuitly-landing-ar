@@ -1,7 +1,7 @@
 /**
  * Componente FAQ
  * Sección de preguntas frecuentes con acordeón interactivo
- * Incluye ventajas adicionales de usar Cuitly
+ * Incluye ventajas adicionales de usar Cuitly y Schema.org FAQPage
  */
 
 'use client'
@@ -10,6 +10,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from '@/hooks/useInView'
 import { FaChevronDown, FaChevronUp, FaBolt, FaRocket, FaShieldAlt, FaCogs } from 'react-icons/fa'
+import Script from 'next/script'
 
 const FAQ = () => {
   const [ref, inView] = useInView({
@@ -68,8 +69,29 @@ const FAQ = () => {
     },
   ]
 
+  // Schema.org FAQPage
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  }
+
   return (
     <section id="faq" className="py-20 lg:py-32 bg-secondary-gray">
+      {/* Schema.org FAQPage JSON-LD */}
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header de la sección */}
         <motion.div

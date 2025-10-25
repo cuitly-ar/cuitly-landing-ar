@@ -1,0 +1,17 @@
+{
+  "name": "Cuitly - Facturación desde WhatsApp",
+  "short_name": "Cuitly",
+  "description": "Automatizá tu facturación en ARCA directamente desde WhatsApp. Sin complicaciones, sin errores.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2196F3",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
+
