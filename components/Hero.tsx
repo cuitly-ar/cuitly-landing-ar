@@ -45,10 +45,10 @@ const Hero = () => {
               <span className="text-primary-blue">Facturá desde WhatsApp</span>
               <br />
               <span className="text-gradient bg-gradient-to-r from-primary-blue to-accent-green bg-clip-text text-transparent">
-                App de Facturación AFIP
+                directo en AFIP
               </span>
               <br />
-              <span className="text-primary-blue">para Monotributo</span>
+              <span className="text-primary-blue">sin complicaciones</span>
             </motion.h1>
 
             <motion.p
@@ -57,7 +57,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Automatizá tu facturación en ARCA (ex AFIP) desde WhatsApp. Emití facturas electrónicas oficiales para monotributo en segundos, sin entrar al portal. Sin complicaciones, sin errores.
+              La app de facturación más simple para monotributistas. Emití facturas electrónicas oficiales en ARCA desde WhatsApp en segundos. Sin entrar al portal, sin errores.
             </motion.p>
 
             <motion.div
