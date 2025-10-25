@@ -8,7 +8,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { FaFileInvoiceDollar, FaWhatsapp, FaInstagram, FaLinkedinIn, FaEnvelope } from 'react-icons/fa'
+import { FaFileInvoiceDollar, FaWhatsapp, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -139,25 +139,6 @@ const Footer = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* Información de contacto */}
-        <motion.div
-          className="border-t border-gray-300 pt-8 mb-8"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <div className="flex items-start gap-3 justify-center">
-            <FaEnvelope className="text-primary-blue text-xl mt-1 flex-shrink-0" />
-            <div className="text-center">
-              <h4 className="font-semibold text-primary-blue mb-1">Email</h4>
-              <a href="mailto:hola@cuitly.ar" className="text-secondary-text hover:text-primary-blue transition-colors duration-300">
-                hola@cuitly.ar
-              </a>
-            </div>
-          </div>
-        </motion.div>
 
         {/* Copyright y enlaces legales */}
         <motion.div
