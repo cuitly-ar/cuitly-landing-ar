@@ -8,6 +8,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { FaFileInvoiceDollar, FaWhatsapp, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
 
 const Footer = () => {
@@ -30,7 +31,7 @@ const Footer = () => {
       links: [
         { name: 'Nosotros', href: '#' },
         { name: 'Blog', href: '#' },
-        { name: 'Contacto', href: '#' },
+        { name: 'Contacto', href: '/contacto' },
         { name: 'Términos y Condiciones', href: '/terminos' },
         { name: 'Política de Privacidad', href: '/privacidad' },
       ],
@@ -76,6 +77,40 @@ const Footer = () => {
               <p className="text-secondary-text mb-6 leading-relaxed">
                 La forma más simple de facturar en Argentina. Automatizá tu facturación desde WhatsApp.
               </p>
+              
+              {/* Logos de partners */}
+              <div className="mb-6">
+                <p className="text-xs text-secondary-text mb-3 font-semibold">Integrado con:</p>
+                <div className="flex items-center gap-4 flex-wrap">
+                  <div className="grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100">
+                    <Image 
+                      src="/partners/arca.png" 
+                      alt="ARCA" 
+                      width={60} 
+                      height={30}
+                      className="object-contain"
+                    />
+                  </div>
+                  <div className="grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100">
+                    <Image 
+                      src="/partners/Google_Cloud_Platform.png" 
+                      alt="Google Cloud Platform" 
+                      width={70} 
+                      height={30}
+                      className="object-contain"
+                    />
+                  </div>
+                  <div className="grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100">
+                    <Image 
+                      src="/partners/dlocalgo.webp" 
+                      alt="dLocal GO" 
+                      width={60} 
+                      height={30}
+                      className="object-contain"
+                    />
+                  </div>
+                </div>
+              </div>
               
               {/* Redes sociales */}
               <div className="flex gap-3">

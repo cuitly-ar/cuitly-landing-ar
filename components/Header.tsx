@@ -30,7 +30,7 @@ const Header = () => {
     { name: 'Beneficios', href: '#benefits' },
     { name: 'Planes', href: '#pricing' },
     { name: 'Preguntas', href: '#faq' },
-    { name: 'Soporte', href: '#footer' },
+    { name: 'Contacto', href: '/contacto' },
   ]
 
   // Función para cerrar el menú móvil al hacer clic en un enlace
@@ -80,20 +80,32 @@ const Header = () => {
               </motion.a>
             ))}
             
-            {/* Botón de Registrarse destacado */}
-            <motion.a
-              href="#register"
-              className="px-6 py-3 bg-gradient-to-r from-accent-green to-accent-green-hover text-white font-bold rounded-lg shadow-lg hover:shadow-glow-green transition-all duration-300 hover:scale-105 flex items-center gap-2"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              whileHover={{ y: -2 }}
-            >
-              <span>REGISTRARSE</span>
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </motion.a>
+            {/* Botones de acción */}
+            <div className="flex items-center gap-3">
+              <motion.a
+                href="#login"
+                className="px-5 py-2.5 text-primary-blue font-semibold hover:text-primary-dark-blue transition-all duration-300"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              >
+                Ingresar
+              </motion.a>
+              
+              <motion.a
+                href="#register"
+                className="px-6 py-3 bg-gradient-to-r from-accent-green to-accent-green-hover text-white font-bold rounded-lg shadow-lg hover:shadow-glow-green transition-all duration-300 hover:scale-105 flex items-center gap-2"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                whileHover={{ y: -2 }}
+              >
+                <span>Creá una cuenta</span>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </motion.a>
+            </div>
           </nav>
 
           {/* Botón menú móvil */}

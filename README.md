@@ -163,12 +163,6 @@ El proyecto está configurado para deploy automático en Netlify:
 - El archivo `netlify.toml` incluye redirects para SPA
 - El `next.config.js` está configurado con `output: 'export'`
 
-## 📝 Información Legal
-
-- **Titular**: CRISTIAN AGUSTIN CARANDINO
-- **CUIT**: 20-37617763-8
-- **Contacto**: contacto@cuitly.ar
-- **Legal**: legales@cuitly.ar
 
 ## 💬 Soporte
 
