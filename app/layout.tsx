@@ -17,7 +17,7 @@ const inter = Inter({
 
 // Metadata de SEO para la landing page
 export const metadata: Metadata = {
-  title: 'Cuitly - Facturá desde WhatsApp | App de Facturación AFIP Argentina',
+  title: 'Cuitly - Tu facturación, más simple que nunca | Facturá desde WhatsApp',
   description: 'Emití facturas electrónicas oficiales de ARCA (ex AFIP) directamente desde WhatsApp. Automatizá tu facturación para monotributo sin entrar al portal. Sin complicaciones, sin errores.',
   keywords: [
     'facturar desde whatsapp',

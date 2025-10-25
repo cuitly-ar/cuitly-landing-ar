@@ -42,13 +42,13 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <span className="text-primary-blue">Facturá desde WhatsApp</span>
+              <span className="text-primary-blue">Tu facturación,</span>
               <br />
               <span className="text-gradient bg-gradient-to-r from-primary-blue to-accent-green bg-clip-text text-transparent">
-                directo en AFIP
+              más simple
               </span>
               <br />
-              <span className="text-primary-blue">sin complicaciones</span>
+              <span className="text-primary-blue">que nunca</span>
             </motion.h1>
 
             <motion.p
