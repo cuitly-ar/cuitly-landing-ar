@@ -70,7 +70,7 @@ const Hero = () => {
                 href="#pricing"
                 className="group relative px-8 py-4 bg-gradient-to-r from-accent-green to-accent-green-hover text-white font-bold rounded-xl shadow-xl hover:shadow-glow-green transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 overflow-hidden"
               >
-                <span className="relative z-10">Empezá gratis por 30 días</span>
+                <span className="relative z-10">Empezá gratis por 7 días</span>
                 <svg className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
@@ -85,12 +85,6 @@ const Hero = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-accent-green" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span>Sin tarjeta de crédito</span>
-              </div>
               <div className="flex items-center gap-2">
                 <svg className="w-5 h-5 text-accent-green" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />

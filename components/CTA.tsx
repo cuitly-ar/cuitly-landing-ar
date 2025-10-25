@@ -18,7 +18,7 @@ const CTA = () => {
   ]
 
   const benefits = [
-    'Empezá gratis sin tarjeta de crédito',
+    'Empezá gratis por 7 días',
     'Cancela cuando quieras, sin compromiso',
     'Soporte en español las 24/7',
     'Configuración en menos de 5 minutos',
@@ -55,7 +55,7 @@ const CTA = () => {
           {/* Título Principal */}
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
             ¿Listo para simplificar tu{' '}
-            <span className="text-gradient bg-gradient-to-r from-accent-green to-accent-light-green bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-yellow-300 to-accent-green bg-clip-text text-transparent">
               facturación
             </span>
             ?
@@ -95,10 +95,6 @@ const CTA = () => {
 
           {/* Trust Badges */}
           <div className="flex flex-wrap gap-6 justify-center text-white/80 text-sm">
-            <div className="flex items-center gap-2">
-              <FaCheckCircle className="text-accent-green" />
-              <span>Sin tarjeta de crédito</span>
-            </div>
             <div className="flex items-center gap-2">
               <FaCheckCircle className="text-accent-green" />
               <span>Cancela cuando quieras</span>
@@ -180,7 +176,7 @@ const CTA = () => {
             Términos y Condiciones
           </a>
           {' '}y{' '}
-          <a href="#" className="text-white hover:text-accent-green transition-colors underline">
+          <a href="/privacidad" className="text-white hover:text-accent-green transition-colors underline">
             Política de Privacidad
           </a>
         </motion.p>

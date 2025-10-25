@@ -101,8 +101,8 @@ export default function TerminosPage() {
       number: 8,
       title: "Privacidad y Protección de Datos",
       content: [
-        "Cuitly tratará los datos personales del Usuario conforme a su Política de Privacidad, disponible en https://www.cuitly.com.ar/privacidad, en cumplimiento de la Ley N.º 25.326 de Protección de Datos Personales.",
-        "Los datos son utilizados exclusivamente para brindar el servicio, mejorar la experiencia del Usuario y cumplir con las obligaciones legales y fiscales correspondientes. El Usuario podrá ejercer en cualquier momento sus derechos de acceso, rectificación, actualización o supresión enviando un correo electrónico a legales@cuitly.com.ar."
+        "Cuitly tratará los datos personales del Usuario conforme a su Política de Privacidad, disponible en https://www.cuitly.ar/privacidad, en cumplimiento de la Ley N.º 25.326 de Protección de Datos Personales.",
+        "Los datos son utilizados exclusivamente para brindar el servicio, mejorar la experiencia del Usuario y cumplir con las obligaciones legales y fiscales correspondientes. El Usuario podrá ejercer en cualquier momento sus derechos de acceso, rectificación, actualización o supresión enviando un correo electrónico a legales@cuitly.ar."
       ]
     },
     {
@@ -131,6 +131,21 @@ export default function TerminosPage() {
     },
     {
       number: 11,
+      title: "Cancelaciones y Reembolsos",
+      content: [
+        "El Usuario podrá solicitar la cancelación del servicio o el reembolso de un pago efectuado en los siguientes casos, conforme a la Ley N.º 24.240 de Defensa del Consumidor y normas complementarias vigentes en la República Argentina:"
+      ],
+      listTitle: "Condiciones de reembolso:",
+      list: [
+        "Derecho de revocación: Si el Usuario contrató un plan o servicio a distancia (por medios digitales o electrónicos), podrá revocar la contratación dentro de los 10 (diez) días corridos contados desde la fecha de confirmación de la operación, siempre que no haya hecho uso efectivo del servicio. En tal caso, se realizará el reembolso total del monto abonado dentro de los 10 (diez) días hábiles posteriores a la recepción de la solicitud de revocación.",
+        "Errores imputables a Cuitly: Si por alguna falla atribuible a Cuitly el servicio no pudiera prestarse correctamente (por ejemplo, imposibilidad total de acceso durante el período contratado sin causa imputable al Usuario), podrá gestionarse el reembolso proporcional o total según corresponda.",
+        "Servicios utilizados o vencidos: No se efectuarán reembolsos por períodos ya transcurridos, servicios utilizados parcial o totalmente, o cancelaciones solicitadas una vez iniciado el período de suscripción vigente.",
+        "Procesamiento del reembolso: Las devoluciones se realizarán por el mismo medio de pago utilizado, a través de los procesadores autorizados (Mercado Pago, Dlocal, ONE o proveedores equivalentes). El Usuario acepta que los plazos de acreditación pueden variar según la política de cada proveedor de pago."
+      ],
+      footer: "Toda solicitud de cancelación o reembolso deberá realizarse por escrito a través del correo electrónico contacto@cuitly.ar, indicando nombre completo, CUIT/CUIL, correo registrado en la cuenta, detalle del pago y motivo de la solicitud. Cuitly podrá requerir documentación o información adicional para validar la identidad del solicitante."
+    },
+    {
+      number: 12,
       title: "Suspensión o Terminación del Servicio",
       content: [
         "Cuitly podrá suspender temporal o definitivamente la cuenta de un Usuario si detecta incumplimientos a estos Términos, uso indebido, mora en los pagos o sospecha de fraude.",
@@ -139,7 +154,7 @@ export default function TerminosPage() {
       ]
     },
     {
-      number: 12,
+      number: 13,
       title: "Modificaciones de los Términos",
       content: [
         "Cuitly podrá modificar los presentes Términos en cualquier momento, notificando a los Usuarios mediante los canales oficiales. Las modificaciones entrarán en vigor a los 5 (cinco) días hábiles de su publicación, salvo que se indique lo contrario.",
@@ -147,7 +162,7 @@ export default function TerminosPage() {
       ]
     },
     {
-      number: 13,
+      number: 14,
       title: "Legislación Aplicable y Jurisdicción",
       content: [
         "Los presentes Términos se interpretarán de conformidad con las leyes de la República Argentina. Cualquier controversia que pudiera surgir será sometida a la jurisdicción de los Tribunales Ordinarios de la Ciudad de Córdoba, Provincia de Córdoba, República Argentina, con renuncia expresa a cualquier otro fuero o jurisdicción."
@@ -300,13 +315,13 @@ export default function TerminosPage() {
 
               {/* Contacto Section */}
               <motion.section
-                id="seccion-14"
+                id="seccion-15"
                 variants={fadeInUp}
                 className="mt-12 pt-12 border-t border-gray-200"
               >
                 <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
                   <span className="flex items-center justify-center w-10 h-10 bg-primary-light-blue text-primary-blue rounded-xl font-bold text-lg">
-                    14
+                    15
                   </span>
                   Contacto
                 </h2>
@@ -327,10 +342,10 @@ export default function TerminosPage() {
                       <div>
                         <p className="font-semibold text-gray-900 mb-1">Soporte</p>
                         <a 
-                          href="mailto:soporte@cuitly.com.ar" 
+                          href="mailto:soporte@cuitly.ar" 
                           className="text-primary-blue hover:text-primary-dark-blue font-medium transition-colors break-all"
                         >
-                          soporte@cuitly.com.ar
+                          soporte@cuitly.ar
                         </a>
                       </div>
                     </div>
@@ -347,16 +362,46 @@ export default function TerminosPage() {
                       <div>
                         <p className="font-semibold text-gray-900 mb-1">Legal y Privacidad</p>
                         <a 
-                          href="mailto:legales@cuitly.com.ar" 
+                          href="mailto:legales@cuitly.ar" 
                           className="text-purple-600 hover:text-purple-700 font-medium transition-colors break-all"
                         >
-                          legales@cuitly.com.ar
+                          legales@cuitly.ar
                         </a>
                       </div>
                     </div>
                   </motion.div>
                 </div>
 
+                <motion.div
+                  whileHover={{ scale: 1.01 }}
+                  className="mt-6 bg-gradient-to-br from-green-50 to-green-100/50 rounded-2xl p-6 border border-green-200"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-accent-green rounded-xl flex items-center justify-center flex-shrink-0">
+                      <FaEnvelope className="text-white text-xl" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900 mb-1">Contacto General</p>
+                      <a 
+                        href="mailto:contacto@cuitly.ar" 
+                        className="text-accent-green hover:text-accent-green-hover font-medium transition-colors break-all"
+                      >
+                        contacto@cuitly.ar
+                      </a>
+                    </div>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  whileHover={{ scale: 1.01 }}
+                  className="mt-6 bg-gradient-to-br from-gray-50 to-gray-100/50 rounded-2xl p-6 border border-gray-200"
+                >
+                  <h3 className="font-semibold text-gray-900 mb-3 text-lg">Información del Titular</h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    <strong>Titular:</strong> CRISTIAN AGUSTIN CARANDINO<br />
+                    <strong>CUIT:</strong> 20-37617763-8
+                  </p>
+                </motion.div>
               </motion.section>
 
               {/* Footer Action */}

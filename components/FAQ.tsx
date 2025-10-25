@@ -36,7 +36,7 @@ const FAQ = () => {
     },
     {
       question: '¿Cuánto cuesta?',
-      answer: 'Podés usar Cuitly gratis durante 30 días y luego elegir el plan que mejor se adapte a vos. Ambos planes incluyen comprobantes ilimitados.',
+      answer: 'Podés usar Cuitly gratis durante 7 días y luego elegir el plan que mejor se adapte a vos. Ambos planes incluyen comprobantes ilimitados.',
     },
     {
       question: '¿Es seguro dar mis credenciales?',
@@ -58,7 +58,7 @@ const FAQ = () => {
     },
     {
       icon: FaShieldAlt,
-      text: 'Seguridad total: tus datos no se guardan',
+      text: 'Seguridad: tu clave fiscal no se almacena',
       color: 'from-blue-400 to-cyan-500',
     },
     {

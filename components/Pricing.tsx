@@ -1,7 +1,7 @@
 /**
  * Componente Pricing
  * Muestra los planes de precios con sus características
- * Incluye planes mensuales y anuales con descuento
+ * Incluye toggle para planes mensuales y anuales con descuento
  */
 
 'use client'
@@ -9,6 +9,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from '@/hooks/useInView'
 import { FaCheck } from 'react-icons/fa'
+import { useState } from 'react'
 
 const Pricing = () => {
   const [ref, inView] = useInView({
@@ -16,12 +17,14 @@ const Pricing = () => {
     threshold: 0.1,
   })
 
+  const [isAnnual, setIsAnnual] = useState(false)
+
   // Planes de precios
   const plans = [
     {
       name: 'Plan Esencial',
-      monthlyPrice: '5.499',
-      yearlyPrice: '4.499',
+      monthlyPrice: '6.999',
+      yearlyPrice: '5.499',
       description: 'Perfecto para emprendedores y freelancers',
       features: [
         'Facturación por WhatsApp',
@@ -36,8 +39,8 @@ const Pricing = () => {
     },
     {
       name: 'Plan Profesional',
-      monthlyPrice: '10.999',
-      yearlyPrice: '8.899',
+      monthlyPrice: '13.999',
+      yearlyPrice: '10.999',
       description: 'Ideal para negocios en crecimiento',
       features: [
         'Todo lo del Plan Esencial, más:',
@@ -65,9 +68,36 @@ const Pricing = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-blue mb-4">
             Planes simples y transparentes
           </h2>
-          <p className="text-lg sm:text-xl text-secondary-text">
+          <p className="text-lg sm:text-xl text-secondary-text mb-8">
             Sin costos ocultos. Sin sorpresas. Cancelá cuando quieras.
           </p>
+
+          {/* Toggle mensual/anual */}
+          <div className="inline-flex items-center gap-4 bg-secondary-gray rounded-full p-2">
+            <button
+              onClick={() => setIsAnnual(false)}
+              className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
+                !isAnnual
+                  ? 'bg-primary-blue text-white shadow-lg'
+                  : 'text-secondary-text hover:text-primary-blue'
+              }`}
+            >
+              Mensual
+            </button>
+            <button
+              onClick={() => setIsAnnual(true)}
+              className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
+                isAnnual
+                  ? 'bg-accent-green text-white shadow-lg'
+                  : 'text-secondary-text hover:text-accent-green'
+              }`}
+            >
+              Anual
+              <span className="ml-2 text-xs bg-accent-green text-white px-2 py-1 rounded-full">
+                ¡Ahorra!
+              </span>
+            </button>
+          </div>
         </motion.div>
 
         {/* Grid de planes */}
@@ -101,21 +131,32 @@ const Pricing = () => {
                 {/* Precios */}
                 <div className="flex items-baseline gap-2 mb-2">
                   <span className={`text-5xl font-bold ${plan.highlighted ? 'text-white' : 'text-primary-blue'}`}>
-                    ${plan.monthlyPrice}
+                    ${isAnnual ? plan.yearlyPrice : plan.monthlyPrice}
                   </span>
                   <span className={`text-lg ${plan.highlighted ? 'text-white/80' : 'text-secondary-text'}`}>
                     /mes
                   </span>
                 </div>
                 
-                {/* Precio anual con descuento */}
-                <div className={`inline-block px-4 py-2 rounded-full text-sm font-semibold ${
-                  plan.highlighted 
-                    ? 'bg-accent-green text-white' 
-                    : 'bg-accent-green/10 text-accent-green'
-                }`}>
-                  Pagando anual: ${plan.yearlyPrice} / mes
-                </div>
+                {/* Mensaje según el tipo de plan */}
+                {isAnnual && (
+                  <div className={`inline-block px-4 py-2 rounded-full text-sm font-semibold ${
+                    plan.highlighted 
+                      ? 'bg-accent-green text-white' 
+                      : 'bg-accent-green/10 text-accent-green'
+                  }`}>
+                    Ahorro anual: ${(parseFloat(plan.monthlyPrice.replace('.', '')) * 12 - parseFloat(plan.yearlyPrice.replace('.', '')) * 12).toLocaleString('es-AR')}
+                  </div>
+                )}
+                {!isAnnual && (
+                  <div className={`inline-block px-4 py-2 rounded-full text-sm font-semibold ${
+                    plan.highlighted 
+                      ? 'bg-white/20 text-white' 
+                      : 'bg-primary-blue/10 text-primary-blue'
+                  }`}>
+                    Facturación mensual
+                  </div>
+                )}
               </div>
 
               {/* Características del plan */}
@@ -138,7 +179,7 @@ const Pricing = () => {
                       : 'bg-primary-blue text-white shadow-lg hover:shadow-glow'
                   }`}
                 >
-                  {plan.highlighted ? 'Empezar mi prueba gratuita de 30 días' : 'Probar gratis 30 días'}
+                  {plan.highlighted ? 'Empezar mi prueba gratuita de 7 días' : 'Probar gratis 7 días'}
                 </a>
               </div>
             </motion.div>
@@ -154,10 +195,10 @@ const Pricing = () => {
         >
           <div className="bg-gradient-to-r from-primary-light-blue to-white rounded-2xl p-8 border border-primary-blue/20">
             <h4 className="text-xl font-bold text-primary-blue mb-4">
-              30 días de prueba gratuita
+              7 días de prueba gratuita
             </h4>
             <p className="text-secondary-text leading-relaxed">
-              No necesitás tarjeta de crédito para empezar. Probá todas las funcionalidades durante 30 días sin compromiso.
+              Probá todas las funcionalidades durante 7 días sin compromiso.
               Si no te convence, simplemente cancelás y listo.
             </p>
           </div>
@@ -168,4 +209,3 @@ const Pricing = () => {
 }
 
 export default Pricing
-

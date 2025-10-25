@@ -8,7 +8,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { FaFileInvoiceDollar, FaWhatsapp, FaInstagram, FaLinkedinIn, FaEnvelope, FaMapMarkerAlt, FaLock } from 'react-icons/fa'
+import { FaFileInvoiceDollar, FaWhatsapp, FaInstagram, FaLinkedinIn, FaEnvelope } from 'react-icons/fa'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -32,7 +32,7 @@ const Footer = () => {
         { name: 'Blog', href: '#' },
         { name: 'Contacto', href: '#' },
         { name: 'Términos y Condiciones', href: '/terminos' },
-        { name: 'Política de Privacidad', href: '#' },
+        { name: 'Política de Privacidad', href: '/privacidad' },
       ],
     },
     {
@@ -148,24 +148,13 @@ const Footer = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="flex items-start gap-3">
-              <FaEnvelope className="text-primary-blue text-xl mt-1 flex-shrink-0" />
-              <div>
-                <h4 className="font-semibold text-primary-blue mb-1">Email</h4>
-                <a href="mailto:hola@cuitly.com" className="text-secondary-text hover:text-primary-blue transition-colors duration-300">
-                  hola@cuitly.com
-                </a>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <FaMapMarkerAlt className="text-primary-blue text-xl mt-1 flex-shrink-0" />
-              <div>
-                <h4 className="font-semibold text-primary-blue mb-1">Ubicación</h4>
-                <p className="text-secondary-text">
-                  Buenos Aires, Argentina
-                </p>
-              </div>
+          <div className="flex items-start gap-3 justify-center">
+            <FaEnvelope className="text-primary-blue text-xl mt-1 flex-shrink-0" />
+            <div className="text-center">
+              <h4 className="font-semibold text-primary-blue mb-1">Email</h4>
+              <a href="mailto:hola@cuitly.ar" className="text-secondary-text hover:text-primary-blue transition-colors duration-300">
+                hola@cuitly.ar
+              </a>
             </div>
           </div>
         </motion.div>
@@ -185,28 +174,9 @@ const Footer = () => {
             <Link href="/terminos" className="text-secondary-text hover:text-primary-blue transition-colors duration-300">
               Términos de Servicio
             </Link>
-            <a href="#" className="text-secondary-text hover:text-primary-blue transition-colors duration-300">
+            <a href="/privacidad" className="text-secondary-text hover:text-primary-blue transition-colors duration-300">
               Política de Privacidad
             </a>
-            <a href="#" className="text-secondary-text hover:text-primary-blue transition-colors duration-300">
-              Cookies
-            </a>
-          </div>
-        </motion.div>
-
-        {/* Badge de cumplimiento legal */}
-        <motion.div
-          className="mt-8 text-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          <div className="inline-block bg-white px-6 py-3 rounded-xl shadow-md">
-            <p className="text-xs text-secondary-text flex items-center gap-2 justify-center">
-              <FaLock className="text-primary-blue" />
-              Servicio autorizado y cumple con la normativa de ARCA (ex AFIP)
-            </p>
           </div>
         </motion.div>
       </div>

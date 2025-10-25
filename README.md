@@ -6,35 +6,46 @@ Landing page moderna y responsive para Cuitly, construida con **Next.js 14**, **
 
 - 🎨 **Diseño Moderno**: UI/UX mejorada con animaciones suaves y diseño atractivo
 - 📱 **Totalmente Responsive**: Optimizado para móviles, tablets y desktop
-- ⚡ **Rendimiento Óptimo**: Next.js 14 con App Router para carga rápida
+- ⚡ **Rendimiento Óptimo**: Next.js 14 con App Router y export estático
 - 🎭 **Animaciones**: Framer Motion para transiciones fluidas
 - 🎯 **SEO Optimizado**: Metadata completa y estructura semántica
 - 🧩 **Componentes Modulares**: Código limpio, organizado y bien comentado
 - 🎨 **TailwindCSS**: Estilos utility-first con tema personalizado
+- 📄 **Páginas Legales**: Términos y Condiciones + Política de Privacidad
 
 ## 📁 Estructura del Proyecto
 
 ```
-landing_principal/
+cuitly_landing/
 ├── app/                      # App Router de Next.js
 │   ├── layout.tsx           # Layout principal con metadata
 │   ├── page.tsx             # Página home
-│   └── globals.css          # Estilos globales y variables CSS
+│   ├── globals.css          # Estilos globales y variables CSS
+│   ├── terminos/            # Página de Términos y Condiciones
+│   │   └── page.tsx
+│   └── privacidad/          # Página de Política de Privacidad
+│       └── page.tsx
 ├── components/              # Componentes React
 │   ├── Header.tsx          # Barra de navegación con menú responsive
 │   ├── Hero.tsx            # Sección hero principal con mockup WhatsApp
 │   ├── HowItWorks.tsx      # Cómo funciona (3 pasos)
 │   ├── Features.tsx        # Características sin fricción
 │   ├── Benefits.tsx        # Beneficios reales
-│   ├── Pricing.tsx         # Planes y precios
+│   ├── Pricing.tsx         # Planes y precios (mensual/anual)
 │   ├── FAQ.tsx             # Preguntas frecuentes con acordeón
 │   ├── CTA.tsx             # Call to action final
 │   └── Footer.tsx          # Pie de página con enlaces
-├── public/                  # Archivos estáticos (agregar logos/imágenes aquí)
+├── public/                  # Archivos estáticos
+│   ├── logo.svg
+│   └── logo-simple.svg
+├── hooks/                   # Custom hooks
+│   └── useInView.ts
 ├── package.json            # Dependencias del proyecto
 ├── tailwind.config.js      # Configuración de Tailwind
 ├── tsconfig.json           # Configuración de TypeScript
-├── next.config.js          # Configuración de Next.js
+├── next.config.js          # Configuración de Next.js (static export)
+├── netlify.toml            # Configuración de Netlify
+├── .gitignore              # Archivos ignorados por git
 └── README.md               # Este archivo
 ```
 
@@ -57,27 +68,13 @@ landing_principal/
 ### 1. Instalar dependencias
 
 ```bash
-# Con npm
 npm install
-
-# Con yarn
-yarn install
-
-# Con pnpm
-pnpm install
 ```
 
 ### 2. Ejecutar el servidor de desarrollo
 
 ```bash
-# Con npm
 npm run dev
-
-# Con yarn
-yarn dev
-
-# Con pnpm
-pnpm dev
 ```
 
 Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver la landing page.
@@ -85,17 +82,15 @@ Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver la 
 ### 3. Build para producción
 
 ```bash
-# Con npm
 npm run build
+```
+
+Esto generará el sitio estático en la carpeta `out/`.
+
+### 4. Servidor de producción local
+
+```bash
 npm start
-
-# Con yarn
-yarn build
-yarn start
-
-# Con pnpm
-pnpm build
-pnpm start
 ```
 
 ## 🎨 Personalización
@@ -122,19 +117,6 @@ Cada componente está bien documentado y es fácil de modificar:
 - **Imágenes**: Agrega tus imágenes en la carpeta `public/`
 - **Enlaces**: Actualiza los `href` en cada sección
 
-### Menú de navegación
-
-El menú se define en `components/Header.tsx`:
-
-```typescript
-const navLinks = [
-  { name: 'Beneficios', href: '#benefits' },
-  { name: 'Planes', href: '#pricing' },
-  { name: 'Preguntas', href: '#faq' },
-  { name: 'Soporte', href: '#footer' },
-]
-```
-
 ## 📱 Secciones de la Landing
 
 1. **Header**: Navegación fija con logo y menú responsive + botón REGISTRARSE
@@ -142,16 +124,18 @@ const navLinks = [
 3. **How It Works**: Explicación en 3 pasos del funcionamiento
 4. **Features**: Características principales sin fricción
 5. **Benefits**: Beneficios reales con estadísticas
-6. **Pricing**: 2 planes (Esencial y Profesional) con precios
+6. **Pricing**: 2 planes (Esencial y Profesional) con toggle mensual/anual
 7. **FAQ**: Preguntas frecuentes con acordeón interactivo
 8. **CTA**: Llamada a la acción final con testimonial
 9. **Footer**: Enlaces, contacto y redes sociales
+10. **Términos y Condiciones**: Página legal completa
+11. **Política de Privacidad**: Página de privacidad y cookies
 
 ## 🎯 Optimizaciones Implementadas
 
+- ✅ Export estático para mejor rendimiento
 - ✅ Lazy loading de componentes
 - ✅ Animaciones con Intersection Observer
-- ✅ Imágenes optimizadas con next/image (cuando se agreguen)
 - ✅ SEO metadata completa
 - ✅ Accesibilidad mejorada
 - ✅ Código TypeScript 100% tipado
@@ -161,39 +145,40 @@ const navLinks = [
 
 ```bash
 npm run dev      # Servidor de desarrollo
-npm run build    # Build de producción
+npm run build    # Build de producción (genera carpeta out/)
 npm run start    # Servidor de producción
 npm run lint     # Linting con ESLint
 ```
 
-## 📝 Próximos Pasos Sugeridos
+## 🌐 Deploy en Netlify
 
-1. **Agregar imágenes**: Coloca el logo y otras imágenes en `public/`
-2. **Integrar formulario de registro**: Conectar el botón "REGISTRARSE" con tu backend
-3. **Analytics**: Agregar Google Analytics o similar
-4. **Testing**: Implementar tests con Jest y React Testing Library
-5. **WhatsApp Business API**: Conectar con número real de WhatsApp
+El proyecto está configurado para deploy automático en Netlify:
 
-## 🤝 Contribuciones
+1. Conecta tu repositorio de GitHub a Netlify
+2. La configuración se detecta automáticamente desde `netlify.toml`
+3. Build command: `npm run build`
+4. Publish directory: `out`
 
-Este proyecto fue diseñado para ser fácilmente extensible. Cada componente está bien comentado y sigue las mejores prácticas de React y Next.js.
+**Configuración automática:**
+- El archivo `netlify.toml` incluye redirects para SPA
+- El `next.config.js` está configurado con `output: 'export'`
 
-## 📄 Licencia
+## 📝 Información Legal
 
-Desarrollado para Cuitly - Todos los derechos reservados © 2025
+- **Titular**: CRISTIAN AGUSTIN CARANDINO
+- **CUIT**: 20-37617763-8
+- **Contacto**: contacto@cuitly.ar
+- **Legal**: legales@cuitly.ar
 
 ## 💬 Soporte
 
 ¿Necesitás ayuda? Contactanos:
-- 📧 Email: hola@cuitly.com
-- 💬 WhatsApp: [Agregar número]
+- 📧 Email: contacto@cuitly.ar
+- 📧 Soporte: soporte@cuitly.ar
+- 📧 Legal: legales@cuitly.ar
 
 ---
 
-**¡Tu landing está lista para usar! 🎉**
+**¡Tu landing está lista para producción! 🎉**
 
-Para empezar, simplemente ejecutá `npm install` y luego `npm run dev`.
-
-
-
-
+Desarrollado para Cuitly - Todos los derechos reservados © 2025
