@@ -209,7 +209,7 @@ export default function PrivacidadPage() {
               Última actualización: octubre de 2025
             </p>
             <p className="text-sm text-secondary-text max-w-2xl mx-auto">
-              La presente Política de Privacidad y Cookies describe cómo CRISTIAN AGUSTIN CARANDINO, CUIT N.º 20-37617763-8 (en adelante, "Cuitly" o "nosotros"), recopila, utiliza, almacena y protege los datos personales de los usuarios que acceden y utilizan la plataforma Cuitly.
+              La presente Política de Privacidad y Cookies describe cómo CRISTIAN AGUSTIN CARANDINO, CUIT N.º 20-37617763-8 (en adelante, &quot;Cuitly&quot; o &quot;nosotros&quot;), recopila, utiliza, almacena y protege los datos personales de los usuarios que acceden y utilizan la plataforma Cuitly.
             </p>
             <p className="text-sm text-secondary-text max-w-2xl mx-auto mt-4">
               El uso de los servicios de Cuitly implica la aceptación expresa de la presente Política. Si el Usuario no está de acuerdo, deberá abstenerse de utilizar los servicios.

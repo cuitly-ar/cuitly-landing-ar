@@ -41,11 +41,12 @@ export async function POST(request: Request) {
     })
 
     // Mapear el tipo de consulta a texto legible
-    const tipoTexto = {
+    const tipoMap: Record<string, string> = {
       'quiero_empezar': 'No tengo cuenta y quiero empezar a usar Cuitly',
       'soy_contador': 'Soy contador y quiero usar Cuitly',
       'ya_tengo_cuenta': 'Ya tengo cuenta y necesito ayuda'
-    }[tipo] || tipo
+    }
+    const tipoTexto = tipoMap[tipo] || tipo
 
     // Definir el asunto del email
     const asunto = `Contacto de Formulario | ${tipoTexto} | TICKET ${ticketNumber}`
