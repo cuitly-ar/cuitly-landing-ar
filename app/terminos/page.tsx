@@ -102,7 +102,7 @@ export default function TerminosPage() {
       title: "Privacidad y Protección de Datos",
       content: [
         "Cuitly tratará los datos personales del Usuario conforme a su Política de Privacidad, disponible en https://www.cuitly.ar/privacidad, en cumplimiento de la Ley N.º 25.326 de Protección de Datos Personales.",
-        "Los datos son utilizados exclusivamente para brindar el servicio, mejorar la experiencia del Usuario y cumplir con las obligaciones legales y fiscales correspondientes. El Usuario podrá ejercer en cualquier momento sus derechos de acceso, rectificación, actualización o supresión enviando un correo electrónico a legales@cuitly.ar."
+        "Los datos son utilizados exclusivamente para brindar el servicio, mejorar la experiencia del Usuario y cumplir con las obligaciones legales y fiscales correspondientes. El Usuario podrá ejercer en cualquier momento sus derechos de acceso, rectificación, actualización o supresión enviando un correo electrónico a legales@clientes.cuitly.ar."
       ]
     },
     {
@@ -142,7 +142,7 @@ export default function TerminosPage() {
         "Servicios utilizados o vencidos: No se efectuarán reembolsos por períodos ya transcurridos, servicios utilizados parcial o totalmente, o cancelaciones solicitadas una vez iniciado el período de suscripción vigente.",
         "Procesamiento del reembolso: Las devoluciones se realizarán por el mismo medio de pago utilizado, a través de los procesadores autorizados (Mercado Pago, Dlocal, ONE o proveedores equivalentes). El Usuario acepta que los plazos de acreditación pueden variar según la política de cada proveedor de pago."
       ],
-      footer: "Toda solicitud de cancelación o reembolso deberá realizarse por escrito a través del correo electrónico contacto@cuitly.ar, indicando nombre completo, CUIT/CUIL, correo registrado en la cuenta, detalle del pago y motivo de la solicitud. Cuitly podrá requerir documentación o información adicional para validar la identidad del solicitante."
+      footer: "Toda solicitud de cancelación o reembolso deberá realizarse por escrito a través del correo electrónico contacto@clientes.cuitly.ar, indicando nombre completo, CUIT/CUIL, correo registrado en la cuenta, detalle del pago y motivo de la solicitud. Cuitly podrá requerir documentación o información adicional para validar la identidad del solicitante."
     },
     {
       number: 12,
@@ -342,10 +342,10 @@ export default function TerminosPage() {
                       <div>
                         <p className="font-semibold text-gray-900 mb-1">Soporte</p>
                         <a 
-                          href="mailto:soporte@cuitly.ar" 
+                          href="mailto:soporte@clientes.cuitly.ar" 
                           className="text-primary-blue hover:text-primary-dark-blue font-medium transition-colors break-all"
                         >
-                          soporte@cuitly.ar
+                          soporte@clientes.cuitly.ar
                         </a>
                       </div>
                     </div>
@@ -362,10 +362,10 @@ export default function TerminosPage() {
                       <div>
                         <p className="font-semibold text-gray-900 mb-1">Legal y Privacidad</p>
                         <a 
-                          href="mailto:legales@cuitly.ar" 
+                          href="mailto:legales@clientes.cuitly.ar" 
                           className="text-purple-600 hover:text-purple-700 font-medium transition-colors break-all"
                         >
-                          legales@cuitly.ar
+                          legales@clientes.cuitly.ar
                         </a>
                       </div>
                     </div>
@@ -383,10 +383,10 @@ export default function TerminosPage() {
                     <div>
                       <p className="font-semibold text-gray-900 mb-1">Contacto General</p>
                       <a 
-                        href="mailto:contacto@cuitly.ar" 
+                        href="mailto:contacto@clientes.cuitly.ar" 
                         className="text-accent-green hover:text-accent-green-hover font-medium transition-colors break-all"
                       >
-                        contacto@cuitly.ar
+                        contacto@clientes.cuitly.ar
                       </a>
                     </div>
                   </div>

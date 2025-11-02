@@ -101,7 +101,7 @@ const organizationSchema = {
     '@type': 'ContactPoint',
     telephone: '',
     contactType: 'customer service',
-    email: 'contacto@cuitly.ar',
+    email: 'contacto@clientes.cuitly.ar',
     availableLanguage: ['Spanish'],
     areaServed: 'AR',
   },

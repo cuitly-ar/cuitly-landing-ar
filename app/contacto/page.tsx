@@ -17,6 +17,8 @@ export default function ContactoPage() {
     tipo: '',
     mensaje: ''
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<{type: 'success' | 'error', message: string} | null>(null)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -25,19 +27,48 @@ export default function ContactoPage() {
     })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Por ahora solo construimos el mailto
-    const subject = encodeURIComponent(`Contacto: ${formData.tipo}`)
-    const body = encodeURIComponent(`
-Nombre: ${formData.nombre}
-Correo: ${formData.correo}
-Tipo: ${formData.tipo}
+    setIsSubmitting(true)
+    setSubmitStatus(null)
 
-Mensaje:
-${formData.mensaje}
-    `)
-    window.location.href = `mailto:contacto@cuitly.ar?subject=${subject}&body=${body}`
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        setSubmitStatus({
+          type: 'success',
+          message: `¡Mensaje enviado exitosamente! Número de ticket: ${data.ticketNumber}. Te responderemos pronto.`
+        })
+        // Limpiar formulario
+        setFormData({
+          nombre: '',
+          correo: '',
+          tipo: '',
+          mensaje: ''
+        })
+      } else {
+        setSubmitStatus({
+          type: 'error',
+          message: data.error || 'Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.'
+        })
+      }
+    } catch (error) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Error de conexión. Por favor, verifica tu internet e intenta nuevamente.'
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -232,12 +263,28 @@ ${formData.mensaje}
                 />
               </div>
 
+              {/* Mensaje de estado */}
+              {submitStatus && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className={`p-4 rounded-xl ${
+                    submitStatus.type === 'success'
+                      ? 'bg-green-50 border border-green-200 text-green-800'
+                      : 'bg-red-50 border border-red-200 text-red-800'
+                  }`}
+                >
+                  {submitStatus.message}
+                </motion.div>
+              )}
+
               {/* Botón Submit */}
               <button
                 type="submit"
-                className="w-full px-8 py-4 bg-gradient-to-r from-accent-green to-accent-green-hover text-white font-bold rounded-xl shadow-lg hover:shadow-glow-green transition-all duration-300 hover:scale-105"
+                disabled={isSubmitting}
+                className="w-full px-8 py-4 bg-gradient-to-r from-accent-green to-accent-green-hover text-white font-bold rounded-xl shadow-lg hover:shadow-glow-green transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
-                Enviar mensaje
+                {isSubmitting ? 'Enviando...' : 'Enviar mensaje'}
               </button>
             </form>
           </motion.div>

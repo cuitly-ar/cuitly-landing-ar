@@ -167,9 +167,9 @@ El proyecto está configurado para deploy automático en Netlify:
 ## 💬 Soporte
 
 ¿Necesitás ayuda? Contactanos:
-- 📧 Email: contacto@cuitly.ar
-- 📧 Soporte: soporte@cuitly.ar
-- 📧 Legal: legales@cuitly.ar
+- 📧 Email: contacto@clientes.cuitly.ar
+- 📧 Soporte: soporte@clientes.cuitly.ar
+- 📧 Legal: legales@clientes.cuitly.ar
 
 ---
 

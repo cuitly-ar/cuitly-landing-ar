@@ -14,6 +14,8 @@ import { useState } from 'react'
 const Footer = () => {
   const currentYear = new Date().getFullYear()
   const [showArrepentimientoModal, setShowArrepentimientoModal] = useState(false)
+  const [isSubmittingArrepentimiento, setIsSubmittingArrepentimiento] = useState(false)
+  const [submitStatusArrepentimiento, setSubmitStatusArrepentimiento] = useState<{type: 'success' | 'error', message: string} | null>(null)
   const [arrepentimientoForm, setArrepentimientoForm] = useState({
     nombre: '',
     apellidos: '',
@@ -23,19 +25,54 @@ const Footer = () => {
     motivo: ''
   })
 
-  const handleArrepentimientoSubmit = (e: React.FormEvent) => {
+  const handleArrepentimientoSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Por ahora solo alerta
-    alert('Formulario de arrepentimiento enviado. En producción se enviará a legales@cuitly.ar')
-    setShowArrepentimientoModal(false)
-    setArrepentimientoForm({
-      nombre: '',
-      apellidos: '',
-      correo: '',
-      cuit: '',
-      movil: '',
-      motivo: ''
-    })
+    setIsSubmittingArrepentimiento(true)
+    setSubmitStatusArrepentimiento(null)
+
+    try {
+      const response = await fetch('/api/send-arrepentimiento', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(arrepentimientoForm),
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        setSubmitStatusArrepentimiento({
+          type: 'success',
+          message: `Solicitud enviada exitosamente. Ticket: ${data.ticketNumber}. Recibirás una respuesta pronto.`
+        })
+        // Limpiar formulario y cerrar modal después de 3 segundos
+        setTimeout(() => {
+          setShowArrepentimientoModal(false)
+          setArrepentimientoForm({
+            nombre: '',
+            apellidos: '',
+            correo: '',
+            cuit: '',
+            movil: '',
+            motivo: ''
+          })
+          setSubmitStatusArrepentimiento(null)
+        }, 3000)
+      } else {
+        setSubmitStatusArrepentimiento({
+          type: 'error',
+          message: data.error || 'Error al enviar la solicitud. Por favor, intenta nuevamente.'
+        })
+      }
+    } catch (error) {
+      setSubmitStatusArrepentimiento({
+        type: 'error',
+        message: 'Error de conexión. Por favor, verifica tu internet e intenta nuevamente.'
+      })
+    } finally {
+      setIsSubmittingArrepentimiento(false)
+    }
   }
 
   // Secciones del footer
@@ -322,11 +359,27 @@ const Footer = () => {
                 />
               </div>
 
+              {/* Mensaje de estado */}
+              {submitStatusArrepentimiento && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className={`p-4 rounded-lg ${
+                    submitStatusArrepentimiento.type === 'success'
+                      ? 'bg-green-50 border border-green-200 text-green-800'
+                      : 'bg-red-50 border border-red-200 text-red-800'
+                  }`}
+                >
+                  {submitStatusArrepentimiento.message}
+                </motion.div>
+              )}
+
               <button
                 type="submit"
-                className="w-full px-6 py-3 bg-primary-blue text-white font-bold rounded-lg hover:bg-primary-dark-blue transition-all duration-300 shadow-md hover:shadow-lg"
+                disabled={isSubmittingArrepentimiento}
+                className="w-full px-6 py-3 bg-primary-blue text-white font-bold rounded-lg hover:bg-primary-dark-blue transition-all duration-300 shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-primary-blue"
               >
-                Enviar
+                {isSubmittingArrepentimiento ? 'Enviando...' : 'Enviar'}
               </button>
             </form>
           </motion.div>

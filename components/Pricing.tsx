@@ -51,7 +51,6 @@ const Pricing = () => {
       description: 'Para monotributistas que facturan más volumen o gestionan varios dispositivos.',
       features: [
         'Todo lo anterior, más:',
-        '',
         'Facturación masiva por Excel o carga múltiple',
         'Emisión desde múltiples dispositivos (WhatsApp + Web)',
         'Programación avanzada de facturas recurrentes sin límite',

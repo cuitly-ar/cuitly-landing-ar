@@ -69,7 +69,7 @@ export default function PrivacidadPage() {
         "La relación contractual derivada del uso del servicio.",
         "Las obligaciones legales aplicables (por ejemplo, normas fiscales y de prevención de fraude)."
       ],
-      footer: "El Usuario podrá revocar su consentimiento en cualquier momento, sin efectos retroactivos, mediante comunicación escrita a legales@cuitly.ar."
+      footer: "El Usuario podrá revocar su consentimiento en cualquier momento, sin efectos retroactivos, mediante comunicación escrita a legales@clientes.cuitly.ar."
     },
     {
       number: 4,
@@ -100,8 +100,8 @@ export default function PrivacidadPage() {
       ],
       listTitle: "Para ejercer estos derechos, enviar solicitud a:",
       list: [
-        "📩 legales@cuitly.ar",
-        "📩 contacto@cuitly.ar"
+        "📩 legales@clientes.cuitly.ar",
+        "📩 contacto@clientes.cuitly.ar"
       ],
       footer: "La solicitud deberá contener nombre completo, correo registrado, CUIT/CUIL y descripción del pedido. La Agencia de Acceso a la Información Pública (AAIP), órgano de control de la Ley N.º 25.326, tiene la facultad de atender denuncias y reclamos relacionados con el tratamiento de datos personales (https://www.argentina.gob.ar/aaip)."
     },
@@ -321,10 +321,10 @@ export default function PrivacidadPage() {
                       <div>
                         <p className="font-semibold text-gray-900 mb-1">Legal</p>
                         <a 
-                          href="mailto:legales@cuitly.ar" 
+                          href="mailto:legales@clientes.cuitly.ar" 
                           className="text-purple-600 hover:text-purple-700 font-medium transition-colors break-all"
                         >
-                          legales@cuitly.ar
+                          legales@clientes.cuitly.ar
                         </a>
                       </div>
                     </div>
@@ -341,10 +341,10 @@ export default function PrivacidadPage() {
                       <div>
                         <p className="font-semibold text-gray-900 mb-1">Contacto General</p>
                         <a 
-                          href="mailto:contacto@cuitly.ar" 
+                          href="mailto:contacto@clientes.cuitly.ar" 
                           className="text-accent-green hover:text-accent-green-hover font-medium transition-colors break-all"
                         >
-                          contacto@cuitly.ar
+                          contacto@clientes.cuitly.ar
                         </a>
                       </div>
                     </div>
