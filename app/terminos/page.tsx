@@ -39,13 +39,13 @@ export default function TerminosPage() {
       number: 2,
       title: "Descripción del Servicio",
       content: [
-        "Cuitly es una plataforma digital de automatización y gestión administrativa que permite a los monotributistas y otros contribuyentes emitir facturas electrónicas ante la AFIP (actual ARCA), así como administrar información contable y comercial básica a través de distintos canales, principalmente:"
+        "Cuitly es una plataforma digital de automatización y gestión administrativa que permite a los monotributistas y otros contribuyentes emitir facturas electrónicas ante la ARCA (ex AFIP), así como administrar información contable y comercial básica a través de distintos canales, principalmente:"
       ],
       list: [
         "Bot de WhatsApp, mediante el cual los Usuarios pueden emitir facturas electrónicas y realizar consultas.",
         "WebApp, donde los Usuarios pueden gestionar sus datos, emitir facturas masivas mediante carga de archivos Excel, consultar historial de operaciones, realizar pagos, descargar comprobantes y administrar su cuenta."
       ],
-      footer: "Cuitly no reemplaza a la AFIP/ARCA ni actúa como intermediario fiscal o contable, sino que provee herramientas tecnológicas que facilitan la interacción del Usuario con dichos organismos y procesos."
+      footer: "Cuitly no reemplaza a la ARCA (ex AFIP) ni actúa como intermediario fiscal o contable, sino que provee herramientas tecnológicas que facilitan la interacción del Usuario con dichos organismos y procesos."
     },
     {
       number: 3,
@@ -83,10 +83,10 @@ export default function TerminosPage() {
     },
     {
       number: 6,
-      title: "Emisión de Facturas y Relación con AFIP/ARCA",
+      title: "Emisión de Facturas y Relación con ARCA (ex AFIP)",
       content: [
-        "Cuitly facilita la interacción con los servicios web oficiales de AFIP/ARCA, automatizando el proceso de emisión de comprobantes electrónicos. El Usuario autoriza expresamente a Cuitly a operar en su nombre, bajo su propia Clave Fiscal o credenciales habilitadas, para efectuar dichas gestiones.",
-        "Cuitly no interviene en la validación ni en la aprobación final de las facturas, ya que esta responsabilidad corresponde exclusivamente a AFIP/ARCA. El Usuario será el único responsable por las operaciones generadas desde su cuenta."
+        "Cuitly facilita la interacción con los servicios web oficiales de ARCA (ex AFIP), automatizando el proceso de emisión de comprobantes electrónicos. El Usuario autoriza expresamente a Cuitly a operar en su nombre, bajo su propia Clave Fiscal o credenciales habilitadas, para efectuar dichas gestiones.",
+        "Cuitly no interviene en la validación ni en la aprobación final de las facturas, ya que esta responsabilidad corresponde exclusivamente a ARCA (ex AFIP). El Usuario será el único responsable por las operaciones generadas desde su cuenta."
       ]
     },
     {
@@ -125,7 +125,7 @@ export default function TerminosPage() {
         "Fallas o interrupciones del servicio por causas de fuerza mayor, mantenimiento o terceros ajenos a la empresa.",
         "Errores derivados de información incorrecta provista por el Usuario.",
         "Daños directos o indirectos derivados del uso indebido de la Plataforma.",
-        "Cambios en las normativas fiscales o errores provenientes de los sistemas de AFIP/ARCA."
+        "Cambios en las normativas fiscales o errores provenientes de los sistemas de ARCA (ex AFIP)."
       ],
       footer: "En ningún caso Cuitly responderá por pérdidas económicas, lucro cesante o daños emergentes derivados del uso de los servicios."
     },

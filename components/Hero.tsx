@@ -51,7 +51,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <strong className="text-gray-900">La forma más rápida y segura de emitir tus facturas AFIP/ARCA</strong>
+              <strong className="text-gray-900">La forma más rápida y segura de emitir tus facturas ARCA (ex AFIP)</strong>
             </motion.p>
 
             <motion.p

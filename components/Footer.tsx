@@ -64,7 +64,7 @@ const Footer = () => {
       title: 'Soporte',
       links: [
         { name: 'Centro de Ayuda', href: '#' },
-        { name: 'Facturación AFIP', href: '#' },
+        { name: 'Facturación ARCA (ex AFIP)', href: '#' },
         { name: 'Normativas', href: '#' },
         { name: 'Documentación', href: '#' },
         { name: 'Botón de Arrepentimiento', href: '#arrepentimiento', onClick: true },

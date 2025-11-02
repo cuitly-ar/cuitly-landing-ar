@@ -36,7 +36,7 @@ export default function PrivacidadPage() {
       list: [
         "Datos de identificación: nombre, apellido, CUIT/CUIL, tipo de monotributo, razón social, y número de documento.",
         "Datos de contacto: correo electrónico, teléfono, y dirección fiscal o comercial.",
-        "Datos fiscales y de facturación: puntos de venta, comprobantes emitidos, información de AFIP/ARCA, ingresos y tipo de actividad.",
+        "Datos fiscales y de facturación: puntos de venta, comprobantes emitidos, información de ARCA (ex AFIP), ingresos y tipo de actividad.",
         "Datos de uso y conexión: información sobre la interacción con el bot de WhatsApp, la WebApp y el sitio web (fecha, hora, IP, tipo de dispositivo, navegador, sistema operativo).",
         "Datos de pago: información necesaria para procesar pagos a través de Mercado Pago, Dlocal, ONE u otros proveedores externos, sin que Cuitly almacene datos de tarjetas o contraseñas bancarias.",
         "Datos de soporte: mensajes o consultas realizadas por los canales de contacto o atención al cliente."
@@ -79,7 +79,7 @@ export default function PrivacidadPage() {
       ],
       list: [
         "Proveedores tecnológicos y de pago (Mercado Pago, Dlocal, ONE u otros equivalentes) para la gestión operativa del servicio.",
-        "Autoridades fiscales (AFIP/ARCA) cuando sea necesario para la emisión de comprobantes o cumplimiento de obligaciones legales.",
+        "Autoridades fiscales (ARCA (ex AFIP)) cuando sea necesario para la emisión de comprobantes o cumplimiento de obligaciones legales.",
         "Socios o prestadores de servicios que colaboren con tareas de hosting, seguridad o soporte técnico, bajo acuerdos de confidencialidad y protección de datos."
       ],
       footer: "Cuitly no vende ni comercializa información personal a terceros. En caso de transferencias internacionales de datos, se garantizará el cumplimiento de las disposiciones de la Ley 25.326 y de la Resolución AAIP N.º 47/2018 sobre países con nivel adecuado de protección."
@@ -132,7 +132,7 @@ export default function PrivacidadPage() {
       number: 9,
       title: "Enlaces externos",
       content: [
-        "La landing o WebApp de Cuitly puede contener enlaces a sitios de terceros (por ejemplo, AFIP, ARCA, procesadores de pago o redes sociales).",
+        "La landing o WebApp de Cuitly puede contener enlaces a sitios de terceros (por ejemplo, ARCA (ex AFIP), procesadores de pago o redes sociales).",
         "Cuitly no se responsabiliza por las prácticas de privacidad ni por el contenido de dichos sitios. Se recomienda revisar sus políticas de privacidad antes de interactuar con ellos."
       ]
     },

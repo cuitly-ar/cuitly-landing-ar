@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'es_AR',
     url: 'https://www.cuitly.ar',
-    title: 'Cuitly - Facturá desde WhatsApp | Automatización de Facturación AFIP',
+    title: 'Cuitly - Facturá desde WhatsApp | Automatización de Facturación ARCA (ex AFIP)',
     description: 'La forma más simple de facturar en Argentina. Emití facturas oficiales desde WhatsApp en segundos, sin entrar a ARCA.',
     siteName: 'Cuitly',
     images: [
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Cuitly - Facturá desde WhatsApp',
-    description: 'Automatizá tu facturación en ARCA desde WhatsApp. Sin complicaciones.',
+    description: 'Automatizá tu facturación en ARCA (ex AFIP) desde WhatsApp. Sin complicaciones.',
     images: ['https://www.cuitly.ar/og-image.jpg'],
     creator: '@cuitly',
     site: '@cuitly',
