@@ -23,45 +23,48 @@ const Pricing = () => {
   // Planes de precios
   const plans = [
     {
-      name: 'Plan Esencial',
-      subtitle: 'Facturá sin complicaciones',
-      monthlyPrice: '6.999',
-      yearlyPrice: '5.499',
-      yearlyTotal: '65.988',
-      description: 'Para monotributistas que quieren emitir facturas desde WhatsApp, fácil y rápido.',
+      name: 'Plan Emprendedor',
+      subtitle: '',
+      monthlyPrice: '10.999',
+      yearlyPrice: '9.999',
+      yearlyTotal: '119.988',
+      description: 'Para monotributistas que quieren facturar fácil y tener control total desde WhatsApp.',
       features: [
         'Facturación por WhatsApp (texto o nota de voz)',
-        'Facturas C ilimitadas',
-        'Notas de Crédito C ilimitadas',
-        'Envío automático de facturas al cliente (WhatsApp o email)',
+        'Facturas C y Notas de Crédito C ilimitadas',
+        'Envío automático de facturas al cliente por email',
         'Reintento automático si AFIP/ARCA está caído',
         'Historial completo de facturación',
-        'Soporte por email (horario laboral)',
+        'Control automático de categoría de Monotributo',
+        '(Te avisa cuánto llevás facturado y si estás por superar tu límite)',
+        'Resumen mensual automático por email (total facturado, cantidad de comprobantes, top clientes)',
+        'Soporte por WhatsApp o email',
       ],
       highlighted: false,
       comingSoon: false,
     },
     {
-      name: 'Plan Profesional',
+      name: 'Plan Negocios',
       subtitle: '',
-      monthlyPrice: '13.999',
-      yearlyPrice: '10.999',
-      yearlyTotal: '131.988',
-      description: 'Ideal para negocios que manejan más volumen o varios dispositivos.',
+      monthlyPrice: '17.999',
+      yearlyPrice: '16.999',
+      yearlyTotal: '203.988',
+      description: 'Para monotributistas que facturan más volumen o gestionan varios dispositivos.',
       features: [
-        'Todo lo del Plan Esencial, más:',
+        'Todo lo anterior, más:',
         'Facturación masiva por Excel o carga múltiple',
         'Emisión desde múltiples dispositivos (WhatsApp + Web)',
-        'Personalización de facturas con tu logo',
-        'Reportes automáticos de facturación mensual',
-        'Programación de facturas recurrentes (automáticas)',
-        'Soporte prioritario email o WhatsApp',
+        'Programación avanzada de facturas recurrentes (sin límite)',
+        'Reportes automáticos mensuales con indicadores por email',
+        'Recordatorios automáticos de vencimientos AFIP / pagos del Monotributo',
+        'Soporte prioritario en WhatsApp (respuesta preferencial)',
+        'Personalización del comprobante (logo, adicionales, pie de página)',
       ],
       highlighted: true,
       comingSoon: false,
     },
     {
-      name: 'Plan Business',
+      name: 'Plan Business Pro',
       subtitle: 'Próximamente',
       monthlyPrice: null,
       yearlyPrice: null,
@@ -77,20 +80,23 @@ const Pricing = () => {
 
   // Tabla de comparación
   const comparisonData = [
-    { feature: 'Facturación por WhatsApp (texto o voz)', esencial: true, profesional: true, business: true },
-    { feature: 'Facturas C ilimitadas', esencial: true, profesional: true, business: true },
-    { feature: 'Notas de crédito C ilimitadas', esencial: true, profesional: true, business: true },
-    { feature: 'Envío automático al cliente', esencial: true, profesional: true, business: true },
-    { feature: 'Reintento automático si AFIP/ARCA está caído', esencial: true, profesional: true, business: true },
-    { feature: 'Historial de facturación', esencial: true, profesional: true, business: true },
-    { feature: 'Acceso web', esencial: false, profesional: true, business: true },
-    { feature: 'Facturación masiva (Excel)', esencial: false, profesional: true, business: true },
-    { feature: 'Personalización de facturas (logo)', esencial: false, profesional: true, business: true },
-    { feature: 'Facturas recurrentes automáticas', esencial: false, profesional: true, business: true },
-    { feature: 'Reportes automáticos mensuales', esencial: false, profesional: true, business: true },
-    { feature: 'Integraciones externas', esencial: false, profesional: false, business: true },
-    { feature: 'Facturación A y B', esencial: false, profesional: false, business: true },
-    { feature: 'Soporte prioritario', esencial: false, profesional: true, business: true },
+    { feature: 'Facturación por WhatsApp (texto o voz)', emprendedor: true, negocios: true, business: true },
+    { feature: 'Facturas C y Notas de Crédito C ilimitadas', emprendedor: true, negocios: true, business: true },
+    { feature: 'Envío automático al cliente por email', emprendedor: true, negocios: true, business: true },
+    { feature: 'Reintento automático si AFIP/ARCA está caído', emprendedor: true, negocios: true, business: true },
+    { feature: 'Historial completo de facturación', emprendedor: true, negocios: true, business: true },
+    { feature: 'Control automático de categoría de Monotributo', emprendedor: true, negocios: true, business: true },
+    { feature: 'Resumen mensual automático por email', emprendedor: true, negocios: true, business: true },
+    { feature: 'Soporte por WhatsApp o email', emprendedor: true, negocios: true, business: true },
+    { feature: 'Facturación masiva (Excel o carga múltiple)', emprendedor: false, negocios: true, business: true },
+    { feature: 'Emisión desde múltiples dispositivos', emprendedor: false, negocios: true, business: true },
+    { feature: 'Programación avanzada de facturas recurrentes', emprendedor: false, negocios: true, business: true },
+    { feature: 'Reportes automáticos mensuales con indicadores', emprendedor: false, negocios: true, business: true },
+    { feature: 'Recordatorios automáticos de vencimientos AFIP', emprendedor: false, negocios: true, business: true },
+    { feature: 'Soporte prioritario en WhatsApp', emprendedor: false, negocios: true, business: true },
+    { feature: 'Personalización del comprobante (logo, etc.)', emprendedor: false, negocios: true, business: true },
+    { feature: 'Integraciones externas', emprendedor: false, negocios: false, business: true },
+    { feature: 'Facturación A y B', emprendedor: false, negocios: false, business: true },
   ]
 
   return (
@@ -306,9 +312,9 @@ const Pricing = () => {
                     <thead className="bg-gradient-to-r from-primary-blue to-primary-dark-blue text-white">
                       <tr>
                         <th className="px-6 py-4 text-left font-semibold">Funcionalidad</th>
-                        <th className="px-6 py-4 text-center font-semibold">Esencial</th>
-                        <th className="px-6 py-4 text-center font-semibold">Profesional</th>
-                        <th className="px-6 py-4 text-center font-semibold">Business</th>
+                        <th className="px-6 py-4 text-center font-semibold">Emprendedor</th>
+                        <th className="px-6 py-4 text-center font-semibold">Negocios</th>
+                        <th className="px-6 py-4 text-center font-semibold">Business Pro</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -316,14 +322,14 @@ const Pricing = () => {
                         <tr key={index} className={`border-b border-gray-200 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'} hover:bg-blue-50 transition-colors duration-200`}>
                           <td className="px-6 py-4 text-gray-800 font-medium">{row.feature}</td>
                           <td className="px-6 py-4 text-center">
-                            {row.esencial ? (
+                            {row.emprendedor ? (
                               <FaCheck className="text-accent-green text-xl mx-auto" />
                             ) : (
                               <FaTimes className="text-gray-400 text-xl mx-auto" />
                             )}
                           </td>
                           <td className="px-6 py-4 text-center">
-                            {row.profesional ? (
+                            {row.negocios ? (
                               <FaCheck className="text-accent-green text-xl mx-auto" />
                             ) : (
                               <FaTimes className="text-gray-400 text-xl mx-auto" />
